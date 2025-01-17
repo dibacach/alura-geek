@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alura Geek</title>
+    <link rel="stylesheet" href="css/challenge AluraGeek.css">
+</head>
+<body>
+    <header>
+        <img src="assets/header.png" width="250px" alt="header">
+    </header>
+    <main>
+        <section class="products">
+            <h1>Mis productos:</h1>
+            <div class="products-cards" data-products>
+            </div>
+        </section>
+        <section class="form">
+            <h1>Agregar producto:</h1>
+            <form id="form-product">
+                <input type="text" name="nombre" id="nombre" class="form-product--input" placeholder="nombre...">
+                <input type="text" name="precio" id="precio" class="form-product--input" placeholder="precio...">
+                <input type="text" name="imagen" id="imagen" class="form-product--input" placeholder="imagen...">
+                <div class="form--buttons">
+                    <button type="submit" name="agregar" id="agregar" class="form--button form--button--primary">Enviar</button>
+                    <button type="button" name="limpiar" id="limpiar" class="form--button form--button--secondary">Limpiar</button>
+                </div>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <img src="assets/header.png" width="250px" alt="footer">
+        <p>DESARROLLADO POR DANIEL IBACACHE</p>
+        <p>ALURA LATAM 2024</p>
+    </footer>
+</body>
+<script src="./js/challenge AluraGeek.js" module></script>
+</html>

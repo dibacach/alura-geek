@@ -1,0 +1,34 @@
+{
+  "productos": [
+    {
+      "id": "1",
+      "nombre": "WD 2TB Hard Drive - USB 3.0",
+      "precio": 64,
+      "imagen": "https://fakestoreapi.com/img/61IBBVJvSDL._AC_SY879_.jpg"
+    },
+    {
+      "id": "2",
+      "nombre": "SanDisk SSD PLUS 1TB",
+      "precio": 109,
+      "imagen": "https://fakestoreapi.com/img/61U7T1koQqL._AC_SX679_.jpg"
+    },
+    {
+      "id": "3",
+      "nombre": "Silicon Power 256GB",
+      "precio": 66,
+      "imagen": "https://fakestoreapi.com/img/71kWymZ+c+L._AC_SX679_.jpg"
+    },
+    {
+      "id": "4",
+      "nombre": "SSD 4TB WD for PS4",
+      "precio": 114,
+      "imagen": "https://fakestoreapi.com/img/61mtL65D4cL._AC_SX679_.jpg"
+    },
+    {
+      "id": "5",
+      "nombre": "Acer SB220Q 21.5 inches Full HD IPS",
+      "precio": 599,
+      "imagen": "https://fakestoreapi.com/img/81QpkIctqPL._AC_SX679_.jpg"
+    }
+  ]
+}
