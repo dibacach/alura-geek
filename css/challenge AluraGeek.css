@@ -31,6 +31,7 @@ header {
 main {
     display: flex;
     flex: 1;
+    padding-top: 50px;
 }
 
 .products {
@@ -98,11 +99,13 @@ main {
     font-family: var(--font-primary);
     font-weight: 700;
     font-style: var(--font-primary-style);
+    bottom: 0;
 }
 
-.card-container--value img{
+.trash{
     width: 24px;
     height: 24px;
+    cursor: pointer;
 }
 
 .form {
@@ -199,11 +202,14 @@ footer p {
 @media (max-width: 480px) {
     main{
         flex-direction: column-reverse;
+        padding-top: 0;
+        justify-content: space-between;
     }
     
     .products{
         min-width: 100%;
         max-width: 100%;
+        max-height: 45vh;
     } 
 
     .form-product--input {

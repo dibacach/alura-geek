@@ -24,13 +24,13 @@
         </section>
         <section class="form">
             <h1>Agregar producto:</h1>
-            <form id="form-product">
-                <input type="text" name="nombre" id="nombre" class="form-product--input" placeholder="nombre...">
-                <input type="text" name="precio" id="precio" class="form-product--input" placeholder="precio...">
-                <input type="text" name="imagen" id="imagen" class="form-product--input" placeholder="imagen...">
+            <form data-product>
+                <input type="text" data-name class="form-product--input" placeholder="nombre...">
+                <input type="text" data-price class="form-product--input" placeholder="precio...">
+                <input type="text" data-image id="imagen" class="form-product--input" placeholder="imagen...">
                 <div class="form--buttons">
-                    <button type="submit" name="agregar" id="agregar" class="form--button form--button--primary">Enviar</button>
-                    <button type="button" name="limpiar" id="limpiar" class="form--button form--button--secondary">Limpiar</button>
+                    <button type="submit" data-agregar class="form--button form--button--primary">Enviar</button>
+                    <button type="button" data-limpiar class="form--button form--button--secondary">Limpiar</button>
                 </div>
             </form>
         </section>

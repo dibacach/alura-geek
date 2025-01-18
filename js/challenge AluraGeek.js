@@ -24,7 +24,7 @@ function createCard(product) {
             <p class="card-container--name">${product.nombre}</p>
             <div class="card-container--value">
                 <p>$ ${product.precio}</p>
-                <img src="./assets/trashIcon.png" onclick="dropProduct('${product.id}')" />
+                <img src="./assets/trashIcon.png" class="trash" onclick="dropProduct('${product.id}')" />
             </div>
         </div>
     `;
@@ -48,12 +48,12 @@ async function listProducts() {
 }
 
 
-document.querySelector('#agregar').addEventListener('click', async (e) => {
+document.querySelector('[data-agregar]').addEventListener('click', async (e) => {
     e.preventDefault();
-    const form = document.querySelector('#form-product');
-    const name = form.querySelector('#nombre'); 
-    const price = form.querySelector('#precio'); 
-    const image = form.querySelector('#imagen'); 
+    const form = document.querySelector('[data-product]');
+    const name = form.querySelector('[data-name]');
+    const price = form.querySelector('[data-price]'); 
+    const image = form.querySelector('[data-image]'); 
 
     if(name.value === '' || price.value === '' || image.value === '') {
         alert('Por favor, rellena todos los campos');
@@ -79,8 +79,8 @@ document.querySelector('#agregar').addEventListener('click', async (e) => {
     image.value = '';
 });
 
-document.querySelector('#limpiar').addEventListener('click', () => {
-    document.querySelector('#form-product').reset();
+document.querySelector('[data-limpiar]').addEventListener('click', () => {
+    document.querySelector('[data-product]').reset();
 });
 
 listProducts();
