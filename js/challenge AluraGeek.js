@@ -1,15 +1,18 @@
+import { getProducts, addProduct, deleteProduct } from './apiConection.js';
 
-// Get list of products
-async function getProducts() {
-    const response = await fetch('http://localhost:3000/productos');
-    const data = await response.json();
-    
-    if(response.status !== 200 || data.length === 0) {
-        return [];
+//Delete a product
+async function dropProduct(id) {
+    const response = await deleteProduct(id);
+
+    if(!response) {
+        alert('No se ha podido eliminar el producto');
+        return;
     }
-    
-    return data;
+
+    alert('Producto eliminado correctamente');
 }
+
+window.dropProduct = dropProduct;
 
 // Create container for each product
 function createCard(product) {
@@ -21,7 +24,7 @@ function createCard(product) {
             <p class="card-container--name">${product.nombre}</p>
             <div class="card-container--value">
                 <p>$ ${product.precio}</p>
-                <img src="./assets/trashIcon.png" onclick="deleteProduct(${product.id})" />
+                <img src="./assets/trashIcon.png" onclick="dropProduct('${product.id}')" />
             </div>
         </div>
     `;
@@ -31,7 +34,7 @@ function createCard(product) {
 //List all products on page
 async function listProducts() {
     const productsContainer = document.querySelector('[data-products]');
-    products = await getProducts();
+    const products = await getProducts();
 
     if(products.length === 0) {
         productsContainer.innerHTML = '<p>No se han agregado productos</p>';
@@ -44,8 +47,9 @@ async function listProducts() {
     });
 }
 
-//Add a new product
-async function addProduct() {
+
+document.querySelector('#agregar').addEventListener('click', async (e) => {
+    e.preventDefault();
     const form = document.querySelector('#form-product');
     const name = form.querySelector('#nombre'); 
     const price = form.querySelector('#precio'); 
@@ -62,15 +66,9 @@ async function addProduct() {
         imagen: image.value
     };
 
-    const response = await fetch('http://localhost:3000/productos', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(product)
-    });
+    const response = await addProduct(product);
 
-    if(response.status !== 201) {
+    if(!response) { 
         alert('No se ha podido agregar el producto');
         return;
     }
@@ -79,28 +77,8 @@ async function addProduct() {
     name.value = '';
     price.value = '';
     image.value = '';
-}
-
-//Delete a product
-async function deleteProduct(id) {
-    const response = await fetch(`http://localhost:3000/productos/${id}`, {
-        method: 'DELETE'
-    });
-
-    console.log(response.status);
-
-    if(response.status !== 200) {
-        alert('No se ha podido eliminar el producto');
-        return;
-    }
-
-    alert('Producto eliminado correctamente');
-}
-
-document.querySelector('#agregar').addEventListener('click', (e) => {
-    e.preventDefault();
-    addProduct();
 });
+
 document.querySelector('#limpiar').addEventListener('click', () => {
     document.querySelector('#form-product').reset();
 });

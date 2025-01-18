@@ -29,6 +29,12 @@
       "nombre": "Acer SB220Q 21.5 inches Full HD IPS",
       "precio": 599,
       "imagen": "https://fakestoreapi.com/img/81QpkIctqPL._AC_SX679_.jpg"
+    },
+    {
+      "id": "2b27",
+      "nombre": "teclado generico",
+      "precio": "10",
+      "imagen": "https://cintegral.cl/wp-content/uploads/2022/07/2068-20b-TECLADO-USB-SIN-NUMERICO-GENIUS-LUXEMATE-110.jpg"
     }
   ]
 }
